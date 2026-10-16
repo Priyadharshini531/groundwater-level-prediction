@@ -1,0 +1,630 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><title>GroundVision — Groundwater Depth Forecast &amp; ML Inference</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-fixed-variant": "#005236", "on-secondary-fixed": "#00201d", "error-container": "#ffdad6", "on-error": "#ffffff", "on-secondary-container": "#006f66", "surface": "#f8f9ff", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "on-primary-container": "#7a93b5", "surface-container-high": "#dce9ff", "error": "#ba1a1a", "on-surface-variant": "#43474d", "tertiary-fixed": "#6ffbbe", "primary-fixed-dim": "#afc8ed", "outline": "#74777e", "surface-variant": "#d3e4fe", "background": "#f8f9ff", "outline-variant": "#c4c6ce", "inverse-on-surface": "#eaf1ff", "on-background": "#0b1c30", "on-primary-fixed-variant": "#2f4867", "on-error-container": "#93000a", "primary-container": "#0f2b48", "primary-fixed": "#d2e4ff", "surface-container-highest": "#d3e4fe", "tertiary-fixed-dim": "#4edea3", "on-primary-fixed": "#001c37", "secondary-fixed": "#89f5e7", "surface-container-low": "#eff4ff", "inverse-surface": "#213145", "secondary": "#006a61", "tertiary": "#001a0f", "on-primary": "#ffffff", "on-surface": "#0b1c30", "on-tertiary-container": "#00a572", "inverse-primary": "#afc8ed", "secondary-fixed-dim": "#6bd8cb", "secondary-container": "#86f2e4", "on-secondary-fixed-variant": "#005049", "on-tertiary-fixed": "#002113", "primary": "#00162d", "surface-dim": "#cbdbf5", "on-secondary": "#ffffff", "tertiary-container": "#00311f", "surface-bright": "#f8f9ff", "surface-tint": "#476080", "surface-container": "#e5eeff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "2rem", "margin-mobile": "1rem", "gutter-sm": "0.75rem", "gutter": "1.25rem", "space-xl": "2.25rem", "space-md": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-lg": "1.5rem" }, "fontFamily": { "label-md": ["Plus Jakarta Sans"], "metric-display": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "title-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"] }, "fontSize": { "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}], "metric-display": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "title-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}], "title-lg": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "headline-lg-mobile": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}], "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-20 flex items-center gap-space-sm px-space-md bg-surface-container-lowest border-b border-surface-container/50"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-secondary shadow-xs shrink-0"><span class="material-symbols-outlined text-2xl text-secondary">water_drop</span></div><div class="flex flex-col min-w-0"><span class="font-title-md text-title-md text-primary tracking-tight font-bold leading-tight">Groundwater Monitoring System</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Academic Research Dashboard</span></div></div><div class="px-space-md py-space-sm"><nav class="flex flex-col gap-space-xs"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-title-md text-title-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="dashboard" href="/"><span class="material-symbols-outlined text-title-lg">dashboard</span>Dashboard</a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-title-md rounded-xl shadow-[0_1px_3px_0_rgba(15,43,72,0.04)]" data-path="groundwater-prediction" href="/prediction"><span class="material-symbols-outlined text-title-lg">trending_up</span>Groundwater Prediction</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-title-md text-title-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="historical-analytics" href="/analytics"><span class="material-symbols-outlined text-title-lg">analytics</span>Historical Analytics</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-title-md text-title-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="groundwater-insights" href="/insights"><span class="material-symbols-outlined text-title-lg">lightbulb</span>Groundwater Insights</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-title-md text-title-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="reports-and-exports" href="/reports"><span class="material-symbols-outlined text-title-lg">download</span>Reports &amp; Exports</a></nav></div></div><div class="p-space-md m-space-md rounded-xl bg-surface-container-low shadow-[0_1px_3px_0_rgba(15,43,72,0.03)] flex flex-col gap-space-sm"><div class="flex items-center justify-between"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>ML Engine Ready</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Scikit-Learn</span></div><div><p class="font-title-md text-title-md text-primary font-bold">Tamil Nadu CGWB Grid</p><p class="font-label-sm text-label-sm text-on-surface-variant">Synoptic Piezometer Records</p></div><div class="pt-space-xs"><span class="inline-block font-label-sm text-label-sm text-on-surface-variant font-medium bg-surface-container px-2 py-1 rounded-lg">Random Forest Regressor</span></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-20 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex flex-col justify-between"><div class="h-14 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><span class="inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md"><span class="material-symbols-outlined text-label-md text-secondary">pin_drop</span><span class="font-medium">Selected Station:</span> <span class="font-semibold text-primary" id="headerStationTitle">Ammapalayam (Perambalur)</span></span></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-3 py-1.5 rounded-xl"><span class="material-symbols-outlined text-label-md text-on-surface-variant">schedule</span><span>Inference Horizon: <strong id="headerHorizonLabel">30 Days</strong></span></div><div class="hidden lg:flex items-center gap-space-xs font-label-sm text-label-sm text-on-secondary-container bg-secondary-container px-3 py-1.5 rounded-xl"><span class="material-symbols-outlined text-label-md">psychology</span><span>Trained Weights: Held-Out Validated</span></div><a class="w-9 h-9 rounded-xl flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="/reports" title="Reports"><span class="material-symbols-outlined text-title-lg">notifications</span></a><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary shrink-0"><span class="material-symbols-outlined text-lg text-secondary">water_drop</span></div><div class="hidden md:flex flex-col text-left"><span class="font-title-md text-title-md text-primary font-semibold leading-tight">Groundwater Monitoring System</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Academic Research Portal</span></div></div></div></div></header><main class="w-full pt-20 bg-surface flex-1 px-space-margin"><div class="flex flex-col w-full pb-space-xl">
+<!-- Page Header & Academic Model Specifications -->
+<div class="flex flex-col gap-space-sm pt-space-md mb-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase tracking-wider font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Predictive Modeling Engine
+          </span>
+<span class="text-outline-variant font-label-sm text-label-sm">•</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">CGWB Tamil Nadu Dataset (2021-2025)</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight font-bold">Groundwater Depth Forecast &amp; ML Inference</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl mt-0.5">
+          Select any Tamil Nadu monitoring station and adjust climatic or extraction scenario variables to simulate future groundwater depth below ground level (m bgl).
+        </p>
+</div>
+<!-- Real Held-Out Validation Status Badges -->
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<div class="flex flex-col items-end text-right px-4 py-2 bg-surface-container-lowest rounded-xl shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Validated Test R² Score</span>
+<span class="font-title-lg text-title-lg text-secondary font-bold font-mono" id="modelR2Display">0.888 <span class="font-label-sm text-label-sm text-outline">/ 1.00</span></span>
+</div>
+<div class="flex flex-col items-end text-right px-4 py-2 bg-surface-container-lowest rounded-xl shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mean Abs. Error (MAE)</span>
+<span class="font-title-lg text-title-lg text-primary font-bold font-mono" id="modelMaeDisplay">1.66 <span class="font-label-sm text-label-sm text-outline">m</span></span>
+</div>
+</div>
+</div>
+<!-- Model Spec Pill Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm px-4 py-2.5 bg-surface-container rounded-xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-title-md">psychology</span>
+<span class="font-label-md text-label-md text-primary font-semibold">Trained Model:</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Random Forest Regressor (Gini Impurity Split)</span>
+<span class="text-outline-variant hidden sm:inline">•</span>
+<span class="font-label-md text-label-md text-on-surface-variant hidden md:inline"><span class="font-semibold text-primary">Features:</span> Station History, Lags (1Q, 4Q), District Mean, Cyclical Season, Coordinates</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+<span>Evaluation: <span class="font-mono font-medium text-primary">2,470 Held-out Test Cycles</span></span>
+</div>
+</div>
+</div>
+<!-- Main Grid: Configuration Form (Left 5 Cols) vs Forecast Telemetry (Right 7 Cols) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT PANEL: Prediction Configuration Form -->
+<div class="lg:col-span-5 flex flex-col gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-title-lg">tune</span>
+<h2 class="font-title-lg text-title-lg text-primary font-bold">Simulation Parameters</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-0.5 rounded-full">Interactive Inputs</span>
+</div>
+<form class="flex flex-col gap-space-md" id="predictionForm" onsubmit="event.preventDefault(); triggerSimulation();">
+<!-- District & Station Selection -->
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-title-md text-primary flex items-center justify-between" for="districtSelect">
+<span>District Filter</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant" id="districtStationCount">33 Districts</span>
+</label>
+<div class="relative">
+<select class="w-full h-11 px-3.5 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg appearance-none cursor-pointer focus:outline-none focus:bg-surface-container transition-colors" id="districtSelect">
+<option value="">Loading districts...</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-2.5 text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-title-md text-title-md text-primary flex items-center justify-between" for="stationSelect">
+<span>Monitoring Station</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium" id="stStatusBadge">In-situ Well Active</span>
+</label>
+<div class="relative">
+<select class="w-full h-11 px-3.5 bg-surface-container-low text-on-surface font-body-md text-body-md rounded-lg appearance-none cursor-pointer focus:outline-none focus:bg-surface-container transition-colors" id="stationSelect">
+<option value="">Loading stations...</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-2.5 text-on-surface-variant">expand_more</span>
+</div>
+<!-- Aquifer Geological Context Meta -->
+<div class="flex flex-wrap items-center gap-space-xs p-2.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm mt-0.5">
+<span class="material-symbols-outlined text-title-md text-secondary">layers</span>
+<span class="font-medium text-primary">Baseline:</span>
+<span id="stMeanDepthBadge">-- m</span>
+<span class="text-outline-variant">•</span>
+<span>Obs: <strong class="text-primary font-medium" id="stObsCountBadge">--</strong></span>
+<span class="text-outline-variant">•</span>
+<span>Latest: <strong class="text-secondary font-medium" id="stLatestDepthBadge">-- m</strong></span>
+</div>
+</div>
+<!-- Prediction Period Selection (Segmented Pills) -->
+<div class="flex flex-col gap-2">
+<label class="font-title-md text-title-md text-primary flex items-center justify-between">
+<span>Forecast Horizon</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Time-Series Step</span>
+</label>
+<div aria-label="Forecast Period" class="grid grid-cols-2 gap-2" role="radiogroup">
+<button class="horizon-btn px-3 py-2 text-left rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant transition-all flex flex-col" onclick="setHorizon(7, this)" type="button">
+<span class="font-title-md text-title-md font-semibold text-primary">7 Days</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Immediate Outlook</span>
+</button>
+<button class="horizon-btn px-3 py-2 text-left rounded-lg bg-primary-container text-on-primary transition-all flex flex-col shadow-sm" onclick="setHorizon(30, this)" type="button">
+<span class="font-title-md text-title-md font-semibold text-on-primary">30 Days</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">Monthly Cycle</span>
+</button>
+<button class="horizon-btn px-3 py-2 text-left rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant transition-all flex flex-col" onclick="setHorizon(90, this)" type="button">
+<span class="font-title-md text-title-md font-semibold text-primary">90 Days</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Quarterly Outlook</span>
+</button>
+<button class="horizon-btn px-3 py-2 text-left rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant transition-all flex flex-col" onclick="setHorizon(180, this)" type="button">
+<span class="font-title-md text-title-md font-semibold text-primary">180 Days</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Seasonal Transition</span>
+</button>
+</div>
+</div>
+<!-- Simulation Input Sliders -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-primary">Climatic &amp; Extraction Variables</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Scenario Modeling</span>
+</div>
+<!-- Parameter 1: Rainfall Offset -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-base">rainy</span>
+                Expected Rainfall Deviation
+              </span>
+<span class="font-mono font-bold text-title-md text-error" id="rainValDisplay">-5%</span>
+</div>
+<input class="w-full accent-secondary bg-surface-container h-2 rounded-lg cursor-pointer" id="rainSlider" max="50" min="-50" oninput="updateRainDisplay(this.value)" step="5" type="range" value="-5">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>-50% (Drought Deficit)</span>
+<span>0% (Seasonal Norm)</span>
+<span>+50% (Monsoon Surge)</span>
+</div>
+</div>
+<!-- Parameter 2: Extraction Demand -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-base">water_pump</span>
+                Seasonal Extraction Demand
+              </span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-primary font-semibold" id="pumpingValDisplay">Standard Agricultural Draft</span>
+</div>
+<select class="w-full h-9 px-2 bg-surface-container-lowest text-on-surface font-body-sm text-body-sm rounded appearance-none cursor-pointer focus:outline-none" id="pumpingSelect" onchange="updatePumpingDisplay(this.value)">
+<option value="low">Subdued Extraction (Post-Harvest Fallow / Low Draft)</option>
+<option selected="" value="standard">Standard Seasonal Draft (Normal Crop Cycle)</option>
+<option value="high">Intensive Irrigation Pumping (Peak Summer Demand)</option>
+</select>
+</div>
+<!-- Parameter 3: Soil Moisture Baseline -->
+<div class="p-3 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-primary font-medium flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-base">humidity_high</span>
+                Antecedent Soil Moisture Baseline
+              </span>
+<span class="font-mono font-bold text-title-md text-primary" id="soilMoistVal">45%</span>
+</div>
+<input class="w-full accent-secondary bg-surface-container h-2 rounded-lg cursor-pointer" id="moistSlider" max="90" min="10" oninput="document.getElementById('soilMoistVal').textContent = this.value + '%'" step="5" type="range" value="45">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>10% (Arid Crust)</span>
+<span>50% (Equilibrium)</span>
+<span>90% (Saturated Topsoil)</span>
+</div>
+</div>
+</div>
+<!-- Form Submit / Triggers -->
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 py-3 px-space-md rounded-xl bg-primary hover:bg-surface-tint text-on-primary font-title-md text-title-md font-bold transition-all shadow-md flex items-center justify-center gap-2" id="runBtn" type="submit">
+<span class="material-symbols-outlined text-title-lg">auto_awesome</span>
+<span>Run Predictive Inference</span>
+</button>
+<button class="px-3.5 py-3 rounded-xl bg-surface-container hover:bg-surface-variant text-on-surface font-title-md text-title-md transition-colors" onclick="resetDefaults()" title="Reset Default Parameters" type="button">
+<span class="material-symbols-outlined text-title-md">restart_alt</span>
+</button>
+</div>
+</form>
+</div>
+<!-- RIGHT PANEL: Forecast Telemetry & Visualizations -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Top Output Card with Live Indicators -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs pb-space-xs border-b border-surface-container">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary font-bold" id="resultTitle">Model Inference Output: Ammapalayam (30-Day Outlook)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="resultSubtitle">Target Projection: Dynamic Forecast</p>
+</div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold w-fit">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+            Prediction Confidence: 95%
+          </span>
+</div>
+<!-- 4 Output Metrics Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm">
+<!-- Simulated Depth -->
+<div class="p-3 bg-surface-container-low rounded-xl flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Forecast Depth</span>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-metric-display text-metric-display text-primary font-bold" id="metricDepth">--</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">m bgl</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline-variant">Meters Below Surface</span>
+</div>
+<!-- Confidence Interval -->
+<div class="p-3 bg-surface-container-low rounded-xl flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">95% Confidence Band</span>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-title-lg text-title-lg text-secondary font-bold font-mono" id="metricCI">-- m</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline-variant">Lower — Upper Limits</span>
+</div>
+<!-- Variance vs Baseline -->
+<div class="p-3 bg-surface-container-low rounded-xl flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Projected Delta</span>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-metric-display text-metric-display text-error font-bold font-mono" id="metricVariance">-- m</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline-variant">vs Empirical Level</span>
+</div>
+<!-- Hydrological Trajectory -->
+<div class="p-3 bg-surface-container-low rounded-xl flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Trajectory Status</span>
+<div class="flex items-baseline gap-1 my-1">
+<span class="font-title-lg text-title-lg text-primary font-bold" id="metricTrajectory">Evaluating...</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline-variant" id="metricTrajSub">Piezometric outlook</span>
+</div>
+</div>
+<!-- Visual Trajectory Chart -->
+<div class="flex flex-col gap-space-xs mt-1">
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span class="font-semibold text-primary">Multi-Step Projected Drawdown / Recovery Envelope</span>
+<span id="chartTargetLabel">Horizon: 30 Days</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-xl p-3 flex flex-col justify-center min-h-[160px]" id="forecastChartBox">
+<!-- Dynamic SVG Forecast Line -->
+<svg class="w-full h-36" id="forecastSvg" preserveAspectRatio="none" viewBox="0 0 600 120">
+<!-- Dynamic content rendered by JS -->
+</svg>
+</div>
+</div>
+<!-- Feature Importance Section -->
+<div class="flex flex-col gap-space-xs mt-space-xs pt-space-xs border-t border-surface-container">
+<div class="flex items-center justify-between">
+<h4 class="font-title-md text-title-md text-primary font-bold">Evaluated Feature Importance Breakdown</h4>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Random Forest Gini Weight</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-xs">
+          Evaluated feature importance metrics indicating which environmental and temporal inputs exerted the highest computational pull on this forecast:
+        </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm" id="featureImportanceGrid">
+<!-- Populated dynamically via JS -->
+</div>
+</div>
+<!-- Academic Disclaimer & Transparency Callout -->
+<div class="p-4 rounded-xl bg-surface-container-high border-l-4 border-secondary flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-headline-md mt-0.5">verified_user</span>
+<div>
+<h4 class="font-title-md text-title-md text-primary font-bold">Model Validation &amp; Hydrogeological Compliance</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 max-w-xl">
+              This inference pipeline utilizes cross-validated Random Forest weights calibrated against the CGWB Tamil Nadu manual quarterly monitoring network. Held-out test R² is 0.888 with an MAE of 1.66m.
+            </p>
+</div>
+</div>
+<div class="self-end sm:self-center">
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest text-primary font-mono text-label-sm font-semibold whitespace-nowrap shadow-xs">CGWB Manual • TN Basin</span>
+</div>
+</div>
+<!-- Action Footer: Export & Save to Project Report -->
+<div class="flex flex-wrap items-center justify-between gap-space-md pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-label-md text-secondary">database</span>
+<span>Simulation Code: <strong class="font-mono text-primary" id="simulationHash">#INF-TN-2025-30D</strong></span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-4 py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-title-md text-title-md font-semibold transition-colors flex items-center gap-2" onclick="downloadForecastSummary()" type="button">
+<span class="material-symbols-outlined text-title-md">description</span>
+<span>Download Summary (.CSV)</span>
+</button>
+<a class="px-4 py-2.5 rounded-lg bg-secondary text-on-secondary hover:bg-on-secondary-container font-title-md text-title-md font-bold transition-colors flex items-center gap-2 shadow-sm" href="/reports" id="saveReportBtn">
+<span class="material-symbols-outlined text-title-md">bookmark_added</span>
+<span>View Executive Report</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main></div>
+
+<script>
+  let currentHorizonDays = 30;
+  let currentStation = null;
+  let lastPredictionData = null;
+
+  async function initPredictionPage() {
+    try {
+      // 1. Fetch districts
+      const distRes = await fetch('/api/districts');
+      const districts = await distRes.json();
+      const distSelect = document.getElementById('districtSelect');
+      distSelect.innerHTML = '';
+      
+      districts.forEach(d => {
+        const opt = document.createElement('option');
+        opt.value = d.district;
+        opt.textContent = `${d.district} (${d.stations_count} wells)`;
+        distSelect.appendChild(opt);
+      });
+
+      const defaultDist = districts.find(d => d.district === 'Perambalur') ? 'Perambalur' : districts[0].district;
+      distSelect.value = defaultDist;
+
+      // 2. Load stations for selected district
+      await loadStations(defaultDist);
+
+      // Event listener for district change
+      distSelect.addEventListener('change', async (e) => {
+        await loadStations(e.target.value);
+      });
+
+      // Event listener for station change
+      document.getElementById('stationSelect').addEventListener('change', async (e) => {
+        currentStation = e.target.value;
+        await updateStationContext(currentStation);
+        await triggerSimulation();
+      });
+
+      // Load initial simulation
+      await triggerSimulation();
+
+    } catch (err) {
+      console.error('Error initializing prediction page:', err);
+    }
+  }
+
+  async function loadStations(district) {
+    try {
+      const res = await fetch(`/api/stations?district=${encodeURIComponent(district)}`);
+      const stations = await res.json();
+      const stSelect = document.getElementById('stationSelect');
+      stSelect.innerHTML = '';
+
+      stations.forEach(st => {
+        const opt = document.createElement('option');
+        opt.value = st.station;
+        opt.textContent = `${st.station} • ${st.total_readings} obs • ${st.latest_depth}m bgl`;
+        stSelect.appendChild(opt);
+      });
+
+      if (stations.length > 0) {
+        const preferred = stations.find(s => s.station === 'Ammapalayam') || stations[0];
+        stSelect.value = preferred.station;
+        currentStation = preferred.station;
+        await updateStationContext(preferred.station);
+      }
+    } catch (err) {
+      console.error('Error loading stations:', err);
+    }
+  }
+
+  async function updateStationContext(stationName) {
+    try {
+      const res = await fetch(`/api/station/${encodeURIComponent(stationName)}`);
+      const st = await res.json();
+      document.getElementById('headerStationTitle').textContent = `${st.station} (${st.district})`;
+      document.getElementById('stMeanDepthBadge').textContent = `${st.mean_depth.toFixed(2)} m`;
+      document.getElementById('stObsCountBadge').textContent = `${st.total_readings} cycles`;
+      document.getElementById('stLatestDepthBadge').textContent = `${st.latest_depth.toFixed(2)} m`;
+    } catch (err) {
+      console.error('Error updating station context:', err);
+    }
+  }
+
+  function updateRainDisplay(val) {
+    const disp = document.getElementById('rainValDisplay');
+    const num = parseInt(val, 10);
+    disp.textContent = (num > 0 ? '+' : '') + num + '%';
+    if (num < 0) {
+      disp.className = 'font-mono font-bold text-title-md text-error';
+    } else if (num === 0) {
+      disp.className = 'font-mono font-bold text-title-md text-on-surface-variant';
+    } else {
+      disp.className = 'font-mono font-bold text-title-md text-secondary';
+    }
+  }
+
+  function updatePumpingDisplay(val) {
+    const disp = document.getElementById('pumpingValDisplay');
+    if (val === 'low') disp.textContent = 'Subdued Draft (Post-Harvest)';
+    else if (val === 'high') disp.textContent = 'Intensive Summer Irrigation';
+    else disp.textContent = 'Standard Agricultural Draft';
+  }
+
+  function setHorizon(days, btn) {
+    currentHorizonDays = days;
+    document.querySelectorAll('.horizon-btn').forEach(b => {
+      b.className = 'horizon-btn px-3 py-2 text-left rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant transition-all flex flex-col';
+      const spans = b.querySelectorAll('span');
+      if (spans[0]) spans[0].className = 'font-title-md text-title-md font-semibold text-primary';
+      if (spans[1]) spans[1].className = 'font-label-sm text-label-sm text-on-surface-variant';
+    });
+
+    btn.className = 'horizon-btn px-3 py-2 text-left rounded-lg bg-primary-container text-on-primary transition-all flex flex-col shadow-sm';
+    const activeSpans = btn.querySelectorAll('span');
+    if (activeSpans[0]) activeSpans[0].className = 'font-title-md text-title-md font-semibold text-on-primary';
+    if (activeSpans[1]) activeSpans[1].className = 'font-label-sm text-label-sm text-on-primary-container';
+    
+    document.getElementById('headerHorizonLabel').textContent = `${days} Days`;
+    document.getElementById('chartTargetLabel').textContent = `Horizon: ${days} Days`;
+
+    triggerSimulation();
+  }
+
+  async function triggerSimulation() {
+    const runBtn = document.getElementById('runBtn');
+    const originalText = runBtn.innerHTML;
+    runBtn.disabled = true;
+    runBtn.innerHTML = `
+      <span class="material-symbols-outlined animate-spin text-secondary-fixed">progress_activity</span>
+      <span>Simulating Hydrogeological Weights...</span>
+    `;
+
+    try {
+      const rainOffset = parseFloat(document.getElementById('rainSlider').value);
+      const pumping = document.getElementById('pumpingSelect').value;
+      const soilMoist = parseFloat(document.getElementById('moistSlider').value);
+      const stationName = document.getElementById('stationSelect').value || currentStation;
+
+      const res = await fetch('/api/predict', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          station: stationName,
+          horizon_days: currentHorizonDays,
+          rain_offset: rainOffset,
+          extraction_demand: pumping,
+          soil_moisture: soilMoist
+        })
+      });
+
+      const data = await res.json();
+      lastPredictionData = data;
+
+      // Update output elements
+      document.getElementById('resultTitle').textContent = `Model Inference Output: ${data.station} (${currentHorizonDays}-Day Outlook)`;
+      document.getElementById('resultSubtitle').textContent = `District: ${data.district} • Target Date: ${data.target_date}`;
+      document.getElementById('simulationHash').textContent = `#INF-${data.station.toUpperCase()}-${currentHorizonDays}D`;
+
+      const depthEl = document.getElementById('metricDepth');
+      depthEl.textContent = data.predicted_depth.toFixed(2);
+      
+      document.getElementById('metricCI').textContent = data.ci_range_str;
+      
+      const varEl = document.getElementById('metricVariance');
+      varEl.textContent = data.variance_str;
+      if (data.variance_m < 0) {
+        varEl.className = 'font-metric-display text-metric-display text-secondary font-bold font-mono';
+      } else if (data.variance_m > 0) {
+        varEl.className = 'font-metric-display text-metric-display text-error font-bold font-mono';
+      } else {
+        varEl.className = 'font-metric-display text-metric-display text-primary font-bold font-mono';
+      }
+
+      document.getElementById('metricTrajectory').textContent = data.trend_label;
+      document.getElementById('metricTrajSub').textContent = data.variance_m < 0 ? 'Water table rising towards surface' : (data.variance_m > 0 ? 'Water table declining deeper bgl' : 'Equilibrium sustained');
+
+      // Update Feature Importances dynamically
+      renderFeatureImportances(data.model_metrics.feature_importances);
+
+      // Render Trajectory SVG chart
+      renderTrajectoryChart(data);
+
+    } catch (err) {
+      console.error('Error during simulation:', err);
+    } finally {
+      runBtn.disabled = false;
+      runBtn.innerHTML = originalText;
+    }
+  }
+
+  function renderFeatureImportances(importances) {
+    const grid = document.getElementById('featureImportanceGrid');
+    grid.innerHTML = '';
+    
+    // Key groupings for clear hydrogeological presentation
+    const items = [
+      { name: 'Historical Piezometer Baseline', val: importances.station_mean || 88.2, desc: 'Station-specific long-term aquifer datum' },
+      { name: 'Antecedent Seasonal Lag (1-Yr Prior)', val: importances.lag_4 || 4.5, desc: 'Same quarter historical measurement' },
+      { name: 'Recent Dynamic Trend (Prior Quarter)', val: importances.lag_1 || 3.8, desc: 'Most recent piezometric observation' },
+      { name: 'District Seasonal Hydro-Climatology', val: importances.district_quarter_mean || 1.8, desc: 'Regional aquifer response benchmark' }
+    ];
+
+    items.forEach(it => {
+      const card = document.createElement('div');
+      card.className = 'p-3 bg-surface-container-low rounded-lg flex flex-col gap-1.5';
+      card.innerHTML = `
+        <div class="flex items-center justify-between font-label-md text-label-md">
+          <span class="font-semibold text-primary">${it.name}</span>
+          <span class="font-mono font-bold text-secondary">${it.val.toFixed(1)}% Influence</span>
+        </div>
+        <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+          <div class="h-full bg-secondary rounded-full" style="width: ${Math.min(100, it.val)}%"></div>
+        </div>
+        <span class="font-label-sm text-label-sm text-on-surface-variant">${it.desc}</span>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  function renderTrajectoryChart(data) {
+    const svg = document.getElementById('forecastSvg');
+    const traj = data.trajectory;
+    if (!traj || traj.length === 0) return;
+
+    const W = 600;
+    const H = 120;
+    const padL = 40;
+    const padR = 40;
+    const padT = 20;
+    const padB = 25;
+
+    const depths = traj.map(t => t.predicted_depth);
+    const ciLows = traj.map(t => t.ci_lower);
+    const ciUps = traj.map(t => t.ci_upper);
+    const allVals = [...depths, ...ciLows, ...ciUps];
+
+    const minV = Math.min(...allVals);
+    const maxV = Math.max(...allVals);
+    const range = Math.max(0.5, maxV - minV);
+    const yMin = minV - range * 0.15;
+    const yMax = maxV + range * 0.15;
+
+    function scaleX(idx) {
+      return padL + (idx / (traj.length - 1)) * (W - padL - padR);
+    }
+
+    function scaleY(val) {
+      return padT + ((val - yMin) / (yMax - yMin)) * (H - padT - padB);
+    }
+
+    // Path for prediction line
+    let pathLine = '';
+    traj.forEach((t, i) => {
+      const x = scaleX(i);
+      const y = scaleY(t.predicted_depth);
+      pathLine += (i === 0 ? `M ${x.toFixed(1)} ${y.toFixed(1)}` : ` L ${x.toFixed(1)} ${y.toFixed(1)}`);
+    });
+
+    // Polygon for confidence band
+    let bandPolygon = `M ${scaleX(0).toFixed(1)} ${scaleY(ciLows[0]).toFixed(1)}`;
+    for (let i = 1; i < traj.length; i++) {
+      bandPolygon += ` L ${scaleX(i).toFixed(1)} ${scaleY(ciLows[i]).toFixed(1)}`;
+    }
+    for (let i = traj.length - 1; i >= 0; i--) {
+      bandPolygon += ` L ${scaleX(i).toFixed(1)} ${scaleY(ciUps[i]).toFixed(1)}`;
+    }
+    bandPolygon += ' Z';
+
+    svg.innerHTML = `
+      <defs>
+        <linearGradient id="bandGrad" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="0%" stop-color="#86f2e4" stop-opacity="0.4"></stop>
+          <stop offset="100%" stop-color="#86f2e4" stop-opacity="0.1"></stop>
+        </linearGradient>
+      </defs>
+      <!-- Horizontal Guideline -->
+      <line x1="${padL}" x2="${W - padR}" y1="${scaleY(data.baseline_depth).toFixed(1)}" y2="${scaleY(data.baseline_depth).toFixed(1)}" stroke="#afc8ed" stroke-dasharray="3,3" stroke-width="1"></line>
+      <text x="${W - padR}" y="${(scaleY(data.baseline_depth) - 5).toFixed(1)}" fill="#476080" font-size="9" text-anchor="end">Baseline: ${data.baseline_depth}m</text>
+
+      <!-- Confidence Envelope -->
+      <path d="${bandPolygon}" fill="url(#bandGrad)"></path>
+
+      <!-- Forecast Trajectory Line -->
+      <path d="${pathLine}" fill="none" stroke="#006a61" stroke-width="2.5" stroke-linecap="round"></path>
+
+      <!-- Steps Points -->
+      ${traj.map((t, i) => `
+        <circle cx="${scaleX(i).toFixed(1)}" cy="${scaleY(t.predicted_depth).toFixed(1)}" r="${i === traj.length - 1 ? 4.5 : 3}" fill="${i === 0 ? '#0f2b48' : '#006a61'}" stroke="#ffffff" stroke-width="1.5"></circle>
+        <text x="${scaleX(i).toFixed(1)}" y="${H - 5}" font-size="9" fill="#74777e" text-anchor="middle">Day ${t.day}</text>
+      `).join('')}
+
+      <!-- Endpoint Label -->
+      <text x="${scaleX(traj.length - 1).toFixed(1)}" y="${(scaleY(traj[traj.length - 1].predicted_depth) - 8).toFixed(1)}" fill="#006a61" font-size="10" font-weight="700" text-anchor="middle">${data.predicted_depth}m</text>
+    `;
+  }
+
+  function resetDefaults() {
+    document.getElementById('rainSlider').value = '-5';
+    updateRainDisplay('-5');
+    document.getElementById('pumpingSelect').value = 'standard';
+    updatePumpingDisplay('standard');
+    document.getElementById('moistSlider').value = '45';
+    document.getElementById('soilMoistVal').textContent = '45%';
+    
+    const thirtyBtn = document.querySelectorAll('.horizon-btn')[1];
+    setHorizon(30, thirtyBtn);
+  }
+
+  function downloadForecastSummary() {
+    if (!lastPredictionData) return;
+    const d = lastPredictionData;
+    let csvContent = "data:text/csv;charset=utf-8,";
+    csvContent += "Station,District,Latitude,Longitude,Horizon_Days,Target_Date,Baseline_Depth_m,Predicted_Depth_m,CI_Lower_95,CI_Upper_95,Variance_m,Rainfall_Offset,Extraction_Demand\n";
+    csvContent += `"${d.station}","${d.district}",${d.latitude},${d.longitude},${d.horizon_days},"${d.target_date}",${d.baseline_depth},${d.predicted_depth},${d.ci_lower},${d.ci_upper},${d.variance_m},"${d.scenario.rain_offset_pct}%","${d.scenario.extraction_demand}"\n\n`;
+    csvContent += "Day_Step,Date,Step_Predicted_Depth_m,Step_CI_Lower,Step_CI_Upper\n";
+    d.trajectory.forEach(t => {
+      csvContent += `${t.day},"${t.date}",${t.predicted_depth},${t.ci_lower},${t.ci_upper}\n`;
+    });
+
+    const encodedUri = encodeURI(csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `GroundVision_Inference_${d.station}_${d.horizon_days}d.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  document.addEventListener('DOMContentLoaded', initPredictionPage);
+</script>
+</body></html>

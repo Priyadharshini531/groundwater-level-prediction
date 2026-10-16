@@ -1,0 +1,334 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><title>GroundVision — Groundwater Health Insights &amp; Directives</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-fixed-variant": "#005236", "on-secondary-fixed": "#00201d", "error-container": "#ffdad6", "on-error": "#ffffff", "on-secondary-container": "#006f66", "surface": "#f8f9ff", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "on-primary-container": "#7a93b5", "surface-container-high": "#dce9ff", "error": "#ba1a1a", "on-surface-variant": "#43474d", "tertiary-fixed": "#6ffbbe", "primary-fixed-dim": "#afc8ed", "outline": "#74777e", "surface-variant": "#d3e4fe", "background": "#f8f9ff", "outline-variant": "#c4c6ce", "inverse-on-surface": "#eaf1ff", "on-background": "#0b1c30", "on-primary-fixed-variant": "#2f4867", "on-error-container": "#93000a", "primary-container": "#0f2b48", "primary-fixed": "#d2e4ff", "surface-container-highest": "#d3e4fe", "tertiary-fixed-dim": "#4edea3", "on-primary-fixed": "#001c37", "secondary-fixed": "#89f5e7", "surface-container-low": "#eff4ff", "inverse-surface": "#213145", "secondary": "#006a61", "tertiary": "#001a0f", "on-primary": "#ffffff", "on-surface": "#0b1c30", "on-tertiary-container": "#00a572", "inverse-primary": "#afc8ed", "secondary-fixed-dim": "#6bd8cb", "secondary-container": "#86f2e4", "on-secondary-fixed-variant": "#005049", "on-tertiary-fixed": "#002113", "primary": "#00162d", "surface-dim": "#cbdbf5", "on-secondary": "#ffffff", "tertiary-container": "#00311f", "surface-bright": "#f8f9ff", "surface-tint": "#476080", "surface-container": "#e5eeff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "2rem", "margin-mobile": "1rem", "gutter-sm": "0.75rem", "gutter": "1.25rem", "space-xl": "2.25rem", "space-md": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-lg": "1.5rem" }, "fontFamily": { "label-md": ["Plus Jakarta Sans"], "metric-display": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "title-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"] }, "fontSize": { "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}], "metric-display": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "title-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}], "title-lg": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "headline-lg-mobile": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}], "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-20 flex items-center gap-space-sm px-space-md bg-surface-container-lowest border-b border-surface-container/50"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-secondary shadow-xs shrink-0"><span class="material-symbols-outlined text-2xl text-secondary">water_drop</span></div><div class="flex flex-col min-w-0"><span class="font-title-md text-title-md text-primary tracking-tight font-bold leading-tight">Groundwater Monitoring System</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Academic Research Dashboard</span></div></div><div class="px-space-md py-space-sm"><nav class="flex flex-col gap-space-xs"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-title-md text-title-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="dashboard" href="/"><span class="material-symbols-outlined text-title-lg">dashboard</span>Dashboard</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-title-md text-title-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="groundwater-prediction" href="/prediction"><span class="material-symbols-outlined text-title-lg">trending_up</span>Groundwater Prediction</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-title-md text-title-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="historical-analytics" href="/analytics"><span class="material-symbols-outlined text-title-lg">analytics</span>Historical Analytics</a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-title-md rounded-xl shadow-[0_1px_3px_0_rgba(15,43,72,0.04)]" data-path="groundwater-insights" href="/insights"><span class="material-symbols-outlined text-title-lg">lightbulb</span>Groundwater Insights</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-title-md text-title-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="reports-and-exports" href="/reports"><span class="material-symbols-outlined text-title-lg">download</span>Reports &amp; Exports</a></nav></div></div><div class="p-space-md m-space-md rounded-xl bg-surface-container-low shadow-[0_1px_3px_0_rgba(15,43,72,0.03)] flex flex-col gap-space-sm"><div class="flex items-center justify-between"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>Empirical Directives</span><span class="font-label-sm text-label-sm text-outline tabular-nums">TN CGWB</span></div><div><p class="font-title-md text-title-md text-primary font-bold">Aquifer Health System</p><p class="font-label-sm text-label-sm text-on-surface-variant">33 Districts Evaluated</p></div><div class="pt-space-xs"><span class="inline-block font-label-sm text-label-sm text-on-tertiary-container font-semibold bg-surface-container px-2 py-1 rounded-lg">GEC-2015 Criteria</span></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-20 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex flex-col justify-between"><div class="h-14 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><span class="inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md"><span class="material-symbols-outlined text-label-md text-secondary">pin_drop</span><span class="font-medium">Selected District:</span> <span class="font-semibold text-primary" id="headerDistLabel">Tamil Nadu Statewide</span></span></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-3 py-1.5 rounded-xl"><span class="material-symbols-outlined text-label-md text-on-surface-variant">schedule</span><span>In-Situ Dataset: 2021-2025</span></div><div class="hidden lg:flex items-center gap-space-xs font-label-sm text-label-sm text-on-secondary-container bg-secondary-container px-3 py-1.5 rounded-xl"><span class="material-symbols-outlined text-label-md">psychology</span><span>12,349 Synoptic Records</span></div><a class="w-9 h-9 rounded-xl flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="/reports" title="Reports"><span class="material-symbols-outlined text-title-lg">notifications</span></a><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary shrink-0"><span class="material-symbols-outlined text-lg text-secondary">water_drop</span></div><div class="hidden md:flex flex-col text-left"><span class="font-title-md text-title-md text-primary font-semibold leading-tight">Groundwater Monitoring System</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Academic Research Portal</span></div></div></div></div></header><main class="w-full pt-20 bg-surface flex-1 px-space-margin"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Academic Breadcrumb & Utility Status -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-lg pb-space-md">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-surface-container-high text-on-surface font-semibold tracking-wider uppercase">
+<span class="material-symbols-outlined text-label-md text-secondary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+        Empirical Intelligence Engine
+      </span>
+<span>•</span>
+<span class="text-on-surface font-medium">Tamil Nadu Groundwater Assessment</span>
+<span>•</span>
+<span class="text-on-surface-variant">CGWB In-Situ Synoptic Verification</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<!-- District Filter -->
+<div class="flex items-center gap-1 bg-surface-container-lowest px-3 py-1.5 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-secondary text-title-md">map</span>
+<select class="bg-transparent font-title-md text-title-md text-primary font-semibold focus:outline-none cursor-pointer" id="insightsDistrictSelect">
+<option value="">All Tamil Nadu (Statewide)</option>
+</select>
+</div>
+<a class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-lg bg-primary text-on-primary font-title-md text-title-md shadow-sm hover:bg-primary-container transition-all" href="/reports">
+<span class="material-symbols-outlined text-title-md">share</span>
+<span>Export Executive Briefing</span>
+</a>
+</div>
+</div>
+<!-- Main Section Header -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-primary-container via-primary to-surface-container-highest text-on-primary p-space-lg mb-space-lg shadow-md">
+<div class="absolute -right-12 -bottom-16 w-80 h-80 rounded-full bg-secondary/15 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl flex flex-col gap-space-xs">
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-secondary-container/20 text-secondary-fixed text-label-sm font-label-sm uppercase tracking-wider backdrop-blur-md w-fit">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed animate-ping"></span>
+        Data-Driven Hydrological Directive
+      </div>
+<h1 class="font-headline-lg text-headline-lg tracking-tight text-white font-bold">
+        Groundwater Health Insights &amp; Conservation Directives
+      </h1>
+<p class="font-body-lg text-body-lg text-surface-container-highest max-w-3xl leading-relaxed">
+        Empirical intelligence derived from 12,349 real quarterly measurements across 1,880 observation stations in Tamil Nadu. Grounding computational machine learning in observable regional hydrogeology.
+      </p>
+</div>
+</div>
+<!-- Trend Synthesis Overview Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-gutter mb-space-lg">
+<!-- Aquifer Health Index -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-title-md text-title-md text-on-surface-variant flex items-center gap-1.5">
+            Aquifer Health Status
+            <span class="material-symbols-outlined text-label-md text-outline cursor-help" title="CGWB Classification: Safe <5m, Semi-critical 5-10m, Critical 10-20m, Over-exploited >20m">info</span>
+</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold" id="healthSubZone">Tamil Nadu Monitoring Grid</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-inner">
+<span class="font-headline-md text-headline-md font-bold" id="healthGrade">B+</span>
+</div>
+</div>
+<div class="my-space-md">
+<div class="flex items-baseline gap-2">
+<span class="font-metric-display text-metric-display text-primary font-bold" id="healthStatusText">Moderately Safe</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1" id="healthStatusSub">
+          Over 55% of observation wells register within safe depths (&lt;5m bgl); moderate seasonal drawdown in agrarian hinterlands.
+        </p>
+</div>
+<!-- Health Bar -->
+<div class="pt-space-xs">
+<div class="w-full h-2 rounded-full bg-surface-container flex overflow-hidden">
+<div class="bg-secondary h-full rounded-full" id="healthBar" style="width: 72%"></div>
+</div>
+<div class="flex justify-between items-center mt-2 text-label-sm font-label-sm text-on-surface-variant">
+<span>Stressed (&gt;20m)</span>
+<span class="text-secondary font-bold" id="healthMetricLabel">1,035 Safe Wells</span>
+<span>Safe (&lt;5m)</span>
+</div>
+</div>
+</div>
+<!-- Multi-Month Trajectory -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-title-md text-title-md text-on-surface-variant flex items-center gap-1.5">
+            Seasonal Infiltration Amplitude
+            <span class="material-symbols-outlined text-label-md text-outline cursor-help" title="Difference between pre-monsoon May minimum and post-monsoon Nov recovery">query_stats</span>
+</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Pre-Monsoon vs Post-Monsoon</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container text-label-sm font-label-sm font-bold">
+<span class="material-symbols-outlined text-label-md">trending_up</span>
+          Recharging
+        </span>
+</div>
+<div class="my-space-md">
+<div class="flex items-baseline gap-1.5">
+<span class="font-metric-display text-metric-display text-primary font-bold tabular-nums" id="seasonalRecoveryVal">1.42</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">m net rise</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1" id="seasonalRecoverySub">
+          Average piezometric rise across Tamil Nadu between peak summer drawdown (May: 8.24m) and post-NE monsoon replenishment (Nov: 6.82m).
+        </p>
+</div>
+<div class="flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low text-label-sm font-label-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Primary Monsoon:
+        </span>
+<span class="font-bold text-primary tabular-nums">Northeast Monsoon (Oct-Dec)</span>
+</div>
+</div>
+<!-- Recharge Efficiency -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-title-md text-title-md text-on-surface-variant flex items-center gap-1.5">
+            Seasonal Infiltration Factor
+            <span class="material-symbols-outlined text-label-md text-outline cursor-help" title="Derived empirical recovery ratio from CGWB quarterly telemetry">water_drop</span>
+</span>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Hydro-Geological Recovery</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-headline-md">filter_drama</span>
+</div>
+</div>
+<div class="my-space-md">
+<div class="flex items-baseline gap-1.5">
+<span class="font-metric-display text-metric-display text-secondary font-bold tabular-nums" id="rechargeFactorVal">72.4%</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">recovered</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Effective monsoonal recharge recovered relative to peak summer drawdown, supported by surface percolation tanks and river basin retention.
+        </p>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant pt-space-xs">
+<span class="inline-flex items-center gap-1 text-on-tertiary-container font-semibold">
+<span class="material-symbols-outlined text-label-md">arrow_upward</span>
+          Monsoon Replenishment Active
+        </span>
+<span class="text-outline">CGWB Quarterly Manual</span>
+</div>
+</div>
+</div>
+<!-- Empirical District Leaderboard: Deepest Extraction vs Healthiest Recharged -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg mb-space-lg">
+<!-- Deepest / High-Stress Aquifers -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error">warning</span>
+<h3 class="font-title-lg text-title-lg text-primary font-bold">Priority Conservation Hotspots (Deepest Aquifers)</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-bold">High Stress</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+      Districts exhibiting the deepest mean groundwater levels (m bgl) based on empirical CGWB observations, requiring artificial recharge structures:
+    </p>
+<div class="flex flex-col gap-space-xs" id="deepestDistrictsList">
+<!-- Populated dynamically via JS -->
+</div>
+</div>
+<!-- Healthiest / Recharged Coastal & Delta Aquifers -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">verified</span>
+<h3 class="font-title-lg text-title-lg text-primary font-bold">Stable &amp; Recharged Basins (Shallowest Aquifers)</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold">Safe Category</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-space-sm">
+      Districts with shallowest water tables maintained by coastal alluvial recharge, river systems, and perennial surface canal inflows:
+    </p>
+<div class="flex flex-col gap-space-xs" id="shallowestDistrictsList">
+<!-- Populated dynamically via JS -->
+</div>
+</div>
+</div>
+<!-- Grounded Technical Directives & Policy Recommendations -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-2 pb-space-xs border-b border-surface-container">
+<span class="material-symbols-outlined text-primary text-title-lg">policy</span>
+<h3 class="font-title-lg text-title-lg text-primary font-bold">Actionable Engineering &amp; Conservation Directives</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center gap-2 text-primary font-bold font-title-md">
+<span class="material-symbols-outlined text-secondary">water_drop</span>
+      Artificial Recharge Structures
+    </div>
+<p class="text-body-sm text-on-surface-variant">
+      In crystalline hard-rock tracts (e.g. Coimbatore, Salem, Erode), construction of check dams, percolation tanks, and recharge shafts is crucial to capture monsoon runoff and elevate weathered zone saturation.
+    </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center gap-2 text-primary font-bold font-title-md">
+<span class="material-symbols-outlined text-secondary">precision_manufacturing</span>
+      Demand Management &amp; Micro-Irrigation
+    </div>
+<p class="text-body-sm text-on-surface-variant">
+      High summer irrigation drawdown indicates peak pumping loads for paddy and sugarcane crops. Subsidized drip/sprinkler micro-irrigation could reduce agricultural draft by up to 35% without yield penalty.
+    </p>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center gap-2 text-primary font-bold font-title-md">
+<span class="material-symbols-outlined text-secondary">gavel</span>
+      Regulatory Groundwater Auditing
+    </div>
+<p class="text-body-sm text-on-surface-variant">
+      Enforce Central Ground Water Authority (CGWA) guidelines in blocks categorized as 'Critical' and 'Over-Exploited'. Prioritize telemetry-based extraction monitoring and community aquifer mapping.
+    </p>
+</div>
+</div>
+</div>
+</div>
+</main></div>
+
+<script>
+  async function initInsights() {
+    try {
+      // 1. Load districts for dropdown
+      const distRes = await fetch('/api/districts');
+      const districts = await distRes.json();
+      const distSelect = document.getElementById('insightsDistrictSelect');
+
+      districts.forEach(d => {
+        const opt = document.createElement('option');
+        opt.value = d.district;
+        opt.textContent = `${d.district} District (${d.status})`;
+        distSelect.appendChild(opt);
+      });
+
+      distSelect.addEventListener('change', async (e) => {
+        await loadInsightsData(e.target.value);
+      });
+
+      await loadInsightsData('');
+
+    } catch (err) {
+      console.error('Error initializing insights:', err);
+    }
+  }
+
+  async function loadInsightsData(district) {
+    try {
+      const url = district ? `/api/insights_data?district=${encodeURIComponent(district)}` : '/api/insights_data';
+      const res = await fetch(url);
+      const data = await res.json();
+
+      document.getElementById('headerDistLabel').textContent = district ? `${district} District` : 'Tamil Nadu Statewide';
+      document.getElementById('healthSubZone').textContent = district ? `${district} Aquifer Zone` : 'Tamil Nadu 33 Districts';
+
+      // Seasonal values
+      document.getElementById('seasonalRecoveryVal').textContent = `${data.monsoon_recovery_m.toFixed(2)}`;
+      document.getElementById('seasonalRecoverySub').textContent = `Average rise between peak summer drawdown (May: ${data.may_pre_monsoon_mean.toFixed(2)}m) and post-monsoon recovery (Nov: ${data.nov_post_monsoon_mean.toFixed(2)}m).`;
+      document.getElementById('rechargeFactorVal').textContent = `${data.recharge_efficiency_pct.toFixed(1)}%`;
+
+      // Health Breakdown
+      const hb = data.health_breakdown;
+      const total = hb.safe + hb.semi_critical + hb.critical + hb.over_exploited;
+      const safePct = Math.round((hb.safe / total) * 100);
+      document.getElementById('healthMetricLabel').textContent = `${hb.safe} Safe Wells (${safePct}%)`;
+
+      if (district && data.selected_district) {
+        const sd = data.selected_district;
+        document.getElementById('healthStatusText').textContent = `${sd.status} Category`;
+        document.getElementById('healthStatusSub').textContent = `District mean depth: ${sd.mean_depth}m bgl (Min: ${sd.min_depth}m, Max: ${sd.max_depth}m across ${sd.stations_count} monitored stations).`;
+        if (sd.status === 'Safe') {
+          document.getElementById('healthGrade').textContent = 'A';
+          document.getElementById('healthBar').style.width = '88%';
+        } else if (sd.status === 'Semi-Critical') {
+          document.getElementById('healthGrade').textContent = 'B';
+          document.getElementById('healthBar').style.width = '64%';
+        } else if (sd.status === 'Critical') {
+          document.getElementById('healthGrade').textContent = 'C';
+          document.getElementById('healthBar').style.width = '42%';
+        } else {
+          document.getElementById('healthGrade').textContent = 'D';
+          document.getElementById('healthBar').style.width = '24%';
+        }
+      }
+
+      // Leaderboard: Deepest
+      const deepList = document.getElementById('deepestDistrictsList');
+      deepList.innerHTML = '';
+      data.deepest_districts.forEach((d, i) => {
+        const row = document.createElement('div');
+        row.className = 'flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low';
+        row.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-error-container text-on-error-container font-mono font-bold text-label-sm flex items-center justify-center">${i+1}</span>
+            <div class="flex flex-col">
+              <span class="font-title-md text-title-md font-semibold text-primary">${d.district}</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">${d.stations_count} wells • Range: ${d.min_depth}m – ${d.max_depth}m</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <span class="font-title-lg text-title-lg font-bold font-mono text-error">${d.mean_depth.toFixed(1)} m</span>
+            <p class="font-label-sm text-label-sm text-outline-variant">mean depth bgl</p>
+          </div>
+        `;
+        deepList.appendChild(row);
+      });
+
+      // Leaderboard: Shallowest
+      const shallowList = document.getElementById('shallowestDistrictsList');
+      shallowList.innerHTML = '';
+      data.shallowest_districts.forEach((d, i) => {
+        const row = document.createElement('div');
+        row.className = 'flex items-center justify-between p-2.5 rounded-lg bg-surface-container-low';
+        row.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container font-mono font-bold text-label-sm flex items-center justify-center">${i+1}</span>
+            <div class="flex flex-col">
+              <span class="font-title-md text-title-md font-semibold text-primary">${d.district}</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">${d.stations_count} wells • Range: ${d.min_depth}m – ${d.max_depth}m</span>
+            </div>
+          </div>
+          <div class="text-right">
+            <span class="font-title-lg text-title-lg font-bold font-mono text-secondary">${d.mean_depth.toFixed(1)} m</span>
+            <p class="font-label-sm text-label-sm text-outline-variant">mean depth bgl</p>
+          </div>
+        `;
+        shallowList.appendChild(row);
+      });
+
+    } catch (err) {
+      console.error('Error loading insights data:', err);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', initInsights);
+</script>
+</body></html>

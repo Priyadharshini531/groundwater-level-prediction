@@ -1,0 +1,394 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><title>GroundVision — Reports &amp; Data Exports</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-tertiary-fixed-variant": "#005236", "on-secondary-fixed": "#00201d", "error-container": "#ffdad6", "on-error": "#ffffff", "on-secondary-container": "#006f66", "surface": "#f8f9ff", "surface-container-lowest": "#ffffff", "on-tertiary": "#ffffff", "on-primary-container": "#7a93b5", "surface-container-high": "#dce9ff", "error": "#ba1a1a", "on-surface-variant": "#43474d", "tertiary-fixed": "#6ffbbe", "primary-fixed-dim": "#afc8ed", "outline": "#74777e", "surface-variant": "#d3e4fe", "background": "#f8f9ff", "outline-variant": "#c4c6ce", "inverse-on-surface": "#eaf1ff", "on-background": "#0b1c30", "on-primary-fixed-variant": "#2f4867", "on-error-container": "#93000a", "primary-container": "#0f2b48", "primary-fixed": "#d2e4ff", "surface-container-highest": "#d3e4fe", "tertiary-fixed-dim": "#4edea3", "on-primary-fixed": "#001c37", "secondary-fixed": "#89f5e7", "surface-container-low": "#eff4ff", "inverse-surface": "#213145", "secondary": "#006a61", "tertiary": "#001a0f", "on-primary": "#ffffff", "on-surface": "#0b1c30", "on-tertiary-container": "#00a572", "inverse-primary": "#afc8ed", "secondary-fixed-dim": "#6bd8cb", "secondary-container": "#86f2e4", "on-secondary-fixed-variant": "#005049", "on-tertiary-fixed": "#002113", "primary": "#00162d", "surface-dim": "#cbdbf5", "on-secondary": "#ffffff", "tertiary-container": "#00311f", "surface-bright": "#f8f9ff", "surface-tint": "#476080", "surface-container": "#e5eeff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "2rem", "margin-mobile": "1rem", "gutter-sm": "0.75rem", "gutter": "1.25rem", "space-xl": "2.25rem", "space-md": "1rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "space-lg": "1.5rem" }, "fontFamily": { "label-md": ["Plus Jakarta Sans"], "metric-display": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "title-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"] }, "fontSize": { "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}], "metric-display": ["32px", {"lineHeight": "38px", "letterSpacing": "-0.03em", "fontWeight": "700"}], "headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600"}], "headline-xl-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "title-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}], "title-lg": ["16px", {"lineHeight": "24px", "fontWeight": "600"}], "headline-lg-mobile": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}], "headline-xl": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "600"}] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-20 flex items-center gap-space-sm px-space-md bg-surface-container-lowest border-b border-surface-container/50"><div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center text-secondary shadow-xs shrink-0"><span class="material-symbols-outlined text-2xl text-secondary">water_drop</span></div><div class="flex flex-col min-w-0"><span class="font-title-md text-title-md text-primary tracking-tight font-bold leading-tight">Groundwater Monitoring System</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Academic Research Dashboard</span></div></div><div class="px-space-md py-space-sm"><nav class="flex flex-col gap-space-xs"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-title-md text-title-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="dashboard" href="/"><span class="material-symbols-outlined text-title-lg">dashboard</span>Dashboard</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-title-md text-title-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="groundwater-prediction" href="/prediction"><span class="material-symbols-outlined text-title-lg">trending_up</span>Groundwater Prediction</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-title-md text-title-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="historical-analytics" href="/analytics"><span class="material-symbols-outlined text-title-lg">analytics</span>Historical Analytics</a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-xl font-title-md text-title-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="groundwater-insights" href="/insights"><span class="material-symbols-outlined text-title-lg">lightbulb</span>Groundwater Insights</a><a aria-current="page" class="flex items-center gap-space-sm px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-title-md rounded-xl shadow-[0_1px_3px_0_rgba(15,43,72,0.04)]" data-path="reports-and-exports" href="/reports"><span class="material-symbols-outlined text-title-lg">download</span>Reports &amp; Exports</a></nav></div></div><div class="p-space-md m-space-md rounded-xl bg-surface-container-low shadow-[0_1px_3px_0_rgba(15,43,72,0.03)] flex flex-col gap-space-sm"><div class="flex items-center justify-between"><span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>Exports Active</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">CSV &amp; PDF</span></div><div><p class="font-title-md text-title-md text-primary font-bold">Deliverables Hub</p><p class="font-label-sm text-label-sm text-on-surface-variant">Central Ground Water Board</p></div><div class="pt-space-xs"><span class="inline-block font-label-sm text-label-sm text-on-surface-variant font-medium bg-surface-container px-2 py-1 rounded-lg">Verified Data Corpus</span></div></div></aside><div class="pl-64 flex flex-col min-h-screen"><header class="fixed top-0 left-64 right-0 h-20 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex flex-col justify-between"><div class="h-14 px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><span class="inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-surface-container-high text-on-surface font-label-md text-label-md"><span class="material-symbols-outlined text-label-md text-secondary">pin_drop</span><span class="font-medium">Active Report Station:</span> <span class="font-semibold text-primary" id="headerReportStation">Ammapalayam, Perambalur</span></span></div><div class="flex items-center gap-space-md"><div class="hidden xl:flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-3 py-1.5 rounded-xl"><span class="material-symbols-outlined text-label-md text-on-surface-variant">schedule</span><span>In-Situ Range: 2021 — 2025</span></div><div class="hidden lg:flex items-center gap-space-xs font-label-sm text-label-sm text-on-secondary-container bg-secondary-container px-3 py-1.5 rounded-xl"><span class="material-symbols-outlined text-label-md">psychology</span><span>Compliance: GEC-2015 Standards</span></div><a class="w-9 h-9 rounded-xl flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" href="/reports" title="Reports"><span class="material-symbols-outlined text-title-lg">notifications</span></a><div class="flex items-center gap-space-sm pl-space-xs"><div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary shrink-0"><span class="material-symbols-outlined text-lg text-secondary">water_drop</span></div><div class="hidden md:flex flex-col text-left"><span class="font-title-md text-title-md text-primary font-semibold leading-tight">Groundwater Monitoring System</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Academic Research Portal</span></div></div></div></div></header><main class="w-full pt-20 bg-surface flex-1 px-space-margin"><div class="flex flex-col w-full pb-space-xl">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span>Enterprise Hydrology Suite</span>
+<span>/</span>
+<span class="text-primary font-semibold">Reports &amp; Data Exports</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">Reports &amp; Data Exports</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">Generate formal hydrological assessment reports, export verified Tamil Nadu time-series CSV datasets, and package model evaluation audits for hydrogeological research reports.</p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="px-4 py-2 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-highest transition-colors font-title-md text-title-md flex items-center gap-2 shadow-sm" onclick="exportFilteredCsv()" type="button">
+<span class="material-symbols-outlined text-title-md">table_view</span>
+        Export CSV Data
+      </button>
+<button class="px-4 py-2 rounded-lg bg-secondary text-on-secondary hover:opacity-90 transition-opacity font-title-md text-title-md flex items-center gap-2 shadow-sm" onclick="generateAndOpenReport()" type="button">
+<span class="material-symbols-outlined text-title-md">print</span>
+        Formal Report PDF
+      </button>
+</div>
+</div>
+<!-- Main Grid: Report Configuration (Left) + Document Live Preview (Right) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- Generator Module (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-lg">
+<!-- Module Header -->
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-space-sm">
+<span class="w-8 h-8 rounded-lg bg-primary-container text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-title-md">tune</span>
+</span>
+<div>
+<h2 class="font-title-lg text-title-lg text-primary font-bold">Report Configuration</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Verified deliverables backed by CGWB Tamil Nadu monitoring records.</p>
+</div>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-medium">CGWB &amp; GEC-2015 Formats</span>
+</div>
+<!-- 1. Report Type Selection -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-title-md text-title-md text-primary">Report Architecture / Document Type</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-xs">
+<label class="relative flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer group">
+<input checked="" class="mt-1 text-secondary focus:ring-0" id="reportTypePdf" name="reportType" type="radio" value="pdf">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-primary group-hover:text-secondary">Comprehensive Assessment Report</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Printable / PDF format with ML accuracy, station stats &amp; directives</span>
+</div>
+</label>
+<label class="relative flex items-start gap-space-sm p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer group">
+<input class="mt-1 text-secondary focus:ring-0" id="reportTypeCsv" name="reportType" type="radio" value="csv">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-primary group-hover:text-secondary">Verified Time-Series CSV</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Direct download of raw &amp; processed quarterly groundwater measurements</span>
+</div>
+</label>
+</div>
+</div>
+<!-- 2. Target Stations and Date Horizon -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<label class="font-title-md text-title-md text-primary">District</label>
+<div class="relative">
+<select class="w-full h-10 px-3 pr-8 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md appearance-none focus:outline-none focus:bg-surface-container transition-colors cursor-pointer" id="reportDistrictSelect">
+<option value="">Loading...</option>
+</select>
+<span class="material-symbols-outlined text-title-md text-on-surface-variant absolute right-2.5 top-2.5 pointer-events-none">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<label class="font-title-md text-title-md text-primary">Monitoring Station</label>
+<div class="relative">
+<select class="w-full h-10 px-3 pr-8 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md appearance-none focus:outline-none focus:bg-surface-container transition-colors cursor-pointer" id="reportStationSelect">
+<option value="">Loading stations...</option>
+</select>
+<span class="material-symbols-outlined text-title-md text-on-surface-variant absolute right-2.5 top-2.5 pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+<!-- 3. Sections to Include -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-title-md text-title-md text-primary">Sections to Include in Deliverable</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-space-xs">
+<label class="flex items-center gap-space-xs p-2 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input checked="" class="rounded text-secondary focus:ring-0" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Executive Summary</span>
+</label>
+<label class="flex items-center gap-space-xs p-2 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input checked="" class="rounded text-secondary focus:ring-0" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Model Validation (R², MAE)</span>
+</label>
+<label class="flex items-center gap-space-xs p-2 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input checked="" class="rounded text-secondary focus:ring-0" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">30-Day Predictive Forecast</span>
+</label>
+<label class="flex items-center gap-space-xs p-2 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input checked="" class="rounded text-secondary focus:ring-0" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Historical Piezometric Log</span>
+</label>
+<label class="flex items-center gap-space-xs p-2 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input checked="" class="rounded text-secondary focus:ring-0" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Conservation Directives</span>
+</label>
+<label class="flex items-center gap-space-xs p-2 rounded-lg bg-surface-container-low hover:bg-surface-container cursor-pointer transition-colors">
+<input checked="" class="rounded text-secondary focus:ring-0" type="checkbox">
+<span class="font-body-sm text-body-sm text-on-surface font-medium">CGWB Provenance Metadata</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Generation Action Trigger -->
+<div class="mt-space-lg pt-space-sm border-t border-surface-container flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-secondary text-base">verified</span>
+<span>Report Output: ISO-14046 &amp; CGWB GEC-2015 Compliant</span>
+</div>
+<button class="px-space-lg py-3 rounded-xl bg-primary hover:bg-surface-tint text-on-primary font-title-md text-title-md font-bold transition-all shadow-md flex items-center gap-2" id="generateReportBtn" onclick="handleGenerateAction()" type="button">
+<span class="material-symbols-outlined text-title-md">download_for_offline</span>
+<span id="generateBtnText">Generate &amp; Download Deliverable</span>
+</button>
+</div>
+</div>
+<!-- Document Live Preview (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">visibility</span>
+<h3 class="font-title-lg text-title-lg text-primary font-bold">Document Live Preview</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant font-mono">Page 1 of 1</span>
+</div>
+<!-- Live Rendered Document Box -->
+<div class="p-space-md rounded-xl bg-surface border border-surface-container flex flex-col gap-space-sm text-on-surface font-body-sm" id="livePreviewBox">
+<div class="border-b border-surface-container pb-2">
+<p class="font-bold text-title-md text-primary">GroundVision™ Hydrogeological Assessment Report</p>
+<p class="text-label-sm text-on-surface-variant">Central Ground Water Board Synoptic Network • Tamil Nadu Region</p>
+</div>
+<div class="flex flex-col gap-1">
+<p><strong class="text-primary">Station:</strong> <span id="previewStationName">Ammapalayam</span> &nbsp;|&nbsp; <strong class="text-primary">District:</strong> <span id="previewDistrictName">Perambalur</span></p>
+<p><strong class="text-primary">Coordinates:</strong> <span id="previewCoords">11.23° N, 78.88° E</span></p>
+<p><strong class="text-primary">Latest Empirical Depth:</strong> <span class="font-bold text-secondary" id="previewLatestDepth">3.23 m bgl</span> (<span id="previewHealthStatus">Safe</span>)</p>
+</div>
+<div class="p-2.5 rounded-lg bg-surface-container-low flex justify-between items-center text-label-sm">
+<div>
+<span class="text-on-surface-variant">Validated Model:</span>
+<strong class="text-primary">Random Forest (R² = 0.888)</strong>
+</div>
+<div>
+<span class="text-on-surface-variant">30D Outlook:</span>
+<strong class="text-secondary" id="previewOutlook">3.94 m bgl</strong>
+</div>
+</div>
+<div class="flex flex-col gap-1 text-label-sm">
+<p class="font-semibold text-primary">Recent In-Situ Quarterly Cycles:</p>
+<div class="space-y-1" id="previewObservationsList">
+<!-- Dynamic -->
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant">
+<span>Document Hash: <strong class="font-mono text-primary" id="previewHash">#GV-TN-CGWB</strong></span>
+<span class="text-secondary font-semibold">Ready for Academic Packaging</span>
+</div>
+</div>
+</div>
+<!-- Generated Compliance Archives Table -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-title-lg">folder_zip</span>
+<h3 class="font-title-lg text-title-lg text-primary font-bold">Standard Project Deliverables &amp; Archives</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ready for Research Evaluation</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-surface-container text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider">
+<th class="py-3 px-space-md">Deliverable Document</th>
+<th class="py-3 px-space-md">Dataset Scope</th>
+<th class="py-3 px-space-md">Region</th>
+<th class="py-3 px-space-md">Type</th>
+<th class="py-3 px-space-md">Status</th>
+<th class="py-3 px-space-md text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container font-body-sm text-body-sm">
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-error text-title-lg">picture_as_pdf</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-primary font-semibold">Station_Hydrogeological_Assessment.html</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Formal report with ML validation, in-situ records &amp; directives</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">2021 — 2025</td>
+<td class="py-3.5 px-space-md">Selected Station</td>
+<td class="py-3.5 px-space-md"><span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold">HTML/PDF</span></td>
+<td class="py-3.5 px-space-md"><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Verified</span></td>
+<td class="py-3.5 px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-3 py-1 rounded-lg bg-surface-container hover:bg-surface-container-highest text-primary font-title-md text-title-md transition-colors" onclick="generateAndOpenReport()" type="button">Print / View</button>
+<button class="p-1 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-sm" onclick="generateAndOpenReport()" title="Open Report" type="button"><span class="material-symbols-outlined text-title-md">open_in_new</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-title-lg">table_chart</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-primary font-semibold">Groundwater_Quarterly_InSitu_Records.csv</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Actual CGWB manual quarterly measurements filtered by station</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">48 Months</td>
+<td class="py-3.5 px-space-md">Selected Station</td>
+<td class="py-3.5 px-space-md"><span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-secondary-container text-on-secondary-container font-semibold">CSV</span></td>
+<td class="py-3.5 px-space-md"><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Verified</span></td>
+<td class="py-3.5 px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<button class="px-3 py-1 rounded-lg bg-surface-container hover:bg-surface-container-highest text-primary font-title-md text-title-md transition-colors" onclick="exportFilteredCsv()" type="button">Download</button>
+<button class="p-1 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-sm" onclick="exportFilteredCsv()" title="Download CSV" type="button"><span class="material-symbols-outlined text-title-md">download</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-3.5 px-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-title-lg">table_chart</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-primary font-semibold">Tamil_Nadu_Statewide_Corpus.csv</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Full dataset containing 12,349 measurements across all 33 districts</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">2021 — 2025</td>
+<td class="py-3.5 px-space-md">All Tamil Nadu</td>
+<td class="py-3.5 px-space-md"><span class="px-2 py-0.5 rounded font-label-sm text-label-sm bg-secondary-container text-on-secondary-container font-semibold">CSV</span></td>
+<td class="py-3.5 px-space-md"><span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-secondary-container font-label-sm text-label-sm font-medium"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 12,349 Rows</span></td>
+<td class="py-3.5 px-space-md text-right">
+<div class="flex items-center justify-end gap-space-xs">
+<a class="px-3 py-1 rounded-lg bg-surface-container hover:bg-surface-container-highest text-primary font-title-md text-title-md transition-colors" href="/api/export/csv">Download Corpus</a>
+<a class="p-1 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-colors shadow-sm" href="/api/export/csv" title="Download Full Corpus"><span class="material-symbols-outlined text-title-md">download</span></a>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main></div>
+
+<script>
+  let currentStation = 'Ammapalayam';
+  let currentStationData = null;
+
+  async function initReportPage() {
+    try {
+      // 1. Fetch districts
+      const distRes = await fetch('/api/districts');
+      const districts = await distRes.json();
+      const distSelect = document.getElementById('reportDistrictSelect');
+      distSelect.innerHTML = '';
+
+      districts.forEach(d => {
+        const opt = document.createElement('option');
+        opt.value = d.district;
+        opt.textContent = `${d.district} (${d.stations_count} wells)`;
+        distSelect.appendChild(opt);
+      });
+
+      const defaultDist = districts.find(d => d.district === 'Perambalur') ? 'Perambalur' : districts[0].district;
+      distSelect.value = defaultDist;
+
+      // 2. Load stations for district
+      await loadReportStations(defaultDist);
+
+      distSelect.addEventListener('change', async (e) => {
+        await loadReportStations(e.target.value);
+      });
+
+      document.getElementById('reportStationSelect').addEventListener('change', async (e) => {
+        currentStation = e.target.value;
+        await updateReportPreview(currentStation);
+      });
+
+    } catch (err) {
+      console.error('Error initializing report page:', err);
+    }
+  }
+
+  async function loadReportStations(district) {
+    try {
+      const res = await fetch(`/api/stations?district=${encodeURIComponent(district)}`);
+      const stations = await res.json();
+      const stSelect = document.getElementById('reportStationSelect');
+      stSelect.innerHTML = '';
+
+      stations.forEach(st => {
+        const opt = document.createElement('option');
+        opt.value = st.station;
+        opt.textContent = `${st.station} • ${st.total_readings} cycles • ${st.latest_depth}m`;
+        stSelect.appendChild(opt);
+      });
+
+      if (stations.length > 0) {
+        const preferred = stations.find(s => s.station === 'Ammapalayam') || stations[0];
+        stSelect.value = preferred.station;
+        currentStation = preferred.station;
+        await updateReportPreview(preferred.station);
+      }
+    } catch (err) {
+      console.error('Error loading report stations:', err);
+    }
+  }
+
+  async function updateReportPreview(stationName) {
+    try {
+      const res = await fetch(`/api/station/${encodeURIComponent(stationName)}`);
+      const data = await res.json();
+      currentStationData = data;
+
+      document.getElementById('headerReportStation').textContent = `${data.station}, ${data.district}`;
+      document.getElementById('previewStationName').textContent = data.station;
+      document.getElementById('previewDistrictName').textContent = data.district;
+      document.getElementById('previewCoords').textContent = `${data.latitude.toFixed(2)}° N, ${data.longitude.toFixed(2)}° E`;
+      document.getElementById('previewLatestDepth').textContent = `${data.latest_depth.toFixed(2)} m bgl`;
+      document.getElementById('previewHealthStatus').textContent = data.health_status;
+      document.getElementById('previewHash').textContent = `#GV-${data.station.toUpperCase()}-2025`;
+
+      // Get 30D Outlook
+      const predRes = await fetch('/api/predict', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          station: stationName,
+          horizon_days: 30,
+          rain_offset: -5,
+          extraction_demand: 'standard'
+        })
+      });
+      const pred = await predRes.json();
+      document.getElementById('previewOutlook').textContent = `${pred.predicted_depth.toFixed(2)} m bgl (${pred.variance_str})`;
+
+      // Recent observations preview
+      const obsList = document.getElementById('previewObservationsList');
+      obsList.innerHTML = '';
+      const recent = data.history.slice(-3).reverse();
+      recent.forEach(h => {
+        const div = document.createElement('div');
+        div.className = 'flex justify-between py-0.5 border-b border-surface-container/50 last:border-0';
+        div.innerHTML = `<span>${h.date_full} (${h.quarter_label})</span><strong>${h.depth_m} m</strong>`;
+        obsList.appendChild(div);
+      });
+
+    } catch (err) {
+      console.error('Error updating preview:', err);
+    }
+  }
+
+  function handleGenerateAction() {
+    const isCsv = document.getElementById('reportTypeCsv').checked;
+    if (isCsv) {
+      exportFilteredCsv();
+    } else {
+      generateAndOpenReport();
+    }
+  }
+
+  function generateAndOpenReport() {
+    const station = document.getElementById('reportStationSelect').value || currentStation;
+    window.open(`/api/export/report?station=${encodeURIComponent(station)}`, '_blank');
+  }
+
+  function exportFilteredCsv() {
+    const station = document.getElementById('reportStationSelect').value || currentStation;
+    const district = document.getElementById('reportDistrictSelect').value;
+    window.location.href = `/api/export/csv?station=${encodeURIComponent(station)}&district=${encodeURIComponent(district)}`;
+  }
+
+  document.addEventListener('DOMContentLoaded', initReportPage);
+</script>
+</body></html>

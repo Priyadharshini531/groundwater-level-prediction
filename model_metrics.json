@@ -1,0 +1,507 @@
+{
+  "model_name": "Random Forest Regressor (CGWB Synoptic Hydro-Ensemble)",
+  "test_r2": 0.888,
+  "test_rmse": 4.01,
+  "test_mae": 1.66,
+  "test_nse": 0.888,
+  "pearson_r": 0.943,
+  "mean_residual": -0.003,
+  "std_residual": 4.01,
+  "training_samples": 9879,
+  "test_samples": 2470,
+  "feature_importances": {
+    "Latitude": 0.67,
+    "Longitude": 0.66,
+    "year": 0.44,
+    "month": 0.11,
+    "quarter": 0.12,
+    "sin_month": 0.18,
+    "cos_month": 0.53,
+    "lag_1": 2.58,
+    "lag_4": 3.25,
+    "district_quarter_mean": 0.84,
+    "station_mean": 90.61
+  },
+  "parity_points": [
+    {
+      "actual": 6.08,
+      "predicted": 7.52
+    },
+    {
+      "actual": 3.85,
+      "predicted": 8.35
+    },
+    {
+      "actual": 2.3,
+      "predicted": 2.1
+    },
+    {
+      "actual": 6.82,
+      "predicted": 5.92
+    },
+    {
+      "actual": 3.75,
+      "predicted": 3.3
+    },
+    {
+      "actual": 14.72,
+      "predicted": 15.81
+    },
+    {
+      "actual": 2.5,
+      "predicted": 3.35
+    },
+    {
+      "actual": 87.06,
+      "predicted": 85.25
+    },
+    {
+      "actual": 3.84,
+      "predicted": 3.03
+    },
+    {
+      "actual": 8.45,
+      "predicted": 8.62
+    },
+    {
+      "actual": 2.05,
+      "predicted": 2.95
+    },
+    {
+      "actual": 5.7,
+      "predicted": 6.33
+    },
+    {
+      "actual": 4.97,
+      "predicted": 4.93
+    },
+    {
+      "actual": 4.3,
+      "predicted": 3.06
+    },
+    {
+      "actual": 14.0,
+      "predicted": 10.21
+    },
+    {
+      "actual": 2.18,
+      "predicted": 1.26
+    },
+    {
+      "actual": 4.92,
+      "predicted": 4.6
+    },
+    {
+      "actual": 4.64,
+      "predicted": 6.17
+    },
+    {
+      "actual": 1.0,
+      "predicted": 1.51
+    },
+    {
+      "actual": 3.28,
+      "predicted": 3.63
+    },
+    {
+      "actual": 1.0,
+      "predicted": 1.09
+    },
+    {
+      "actual": 2.4,
+      "predicted": 3.07
+    },
+    {
+      "actual": 3.65,
+      "predicted": 5.29
+    },
+    {
+      "actual": 1.8,
+      "predicted": 2.11
+    },
+    {
+      "actual": 58.72,
+      "predicted": 61.59
+    },
+    {
+      "actual": 1.15,
+      "predicted": 0.69
+    },
+    {
+      "actual": 4.98,
+      "predicted": 5.07
+    },
+    {
+      "actual": 55.0,
+      "predicted": 79.3
+    },
+    {
+      "actual": 1.66,
+      "predicted": 1.54
+    },
+    {
+      "actual": 16.66,
+      "predicted": 15.73
+    },
+    {
+      "actual": 4.13,
+      "predicted": 3.69
+    },
+    {
+      "actual": 23.25,
+      "predicted": 20.87
+    },
+    {
+      "actual": 2.25,
+      "predicted": 5.57
+    },
+    {
+      "actual": -0.6,
+      "predicted": -0.59
+    },
+    {
+      "actual": 7.4,
+      "predicted": 10.24
+    },
+    {
+      "actual": 0.8,
+      "predicted": 1.23
+    },
+    {
+      "actual": 13.55,
+      "predicted": 7.93
+    },
+    {
+      "actual": 3.47,
+      "predicted": 3.96
+    },
+    {
+      "actual": 2.3,
+      "predicted": 2.78
+    },
+    {
+      "actual": 20.73,
+      "predicted": 22.06
+    },
+    {
+      "actual": 6.25,
+      "predicted": 7.62
+    },
+    {
+      "actual": 2.0,
+      "predicted": 1.54
+    },
+    {
+      "actual": 4.17,
+      "predicted": 3.82
+    },
+    {
+      "actual": 4.05,
+      "predicted": 4.7
+    },
+    {
+      "actual": 2.32,
+      "predicted": 2.13
+    },
+    {
+      "actual": 7.83,
+      "predicted": 7.35
+    },
+    {
+      "actual": 4.25,
+      "predicted": 3.13
+    },
+    {
+      "actual": 4.4,
+      "predicted": 4.6
+    },
+    {
+      "actual": 2.36,
+      "predicted": 2.0
+    },
+    {
+      "actual": 1.39,
+      "predicted": 1.07
+    },
+    {
+      "actual": 2.95,
+      "predicted": 2.48
+    },
+    {
+      "actual": 0.7,
+      "predicted": 1.57
+    },
+    {
+      "actual": 4.07,
+      "predicted": 3.45
+    },
+    {
+      "actual": 1.97,
+      "predicted": 4.19
+    },
+    {
+      "actual": 15.92,
+      "predicted": 16.41
+    },
+    {
+      "actual": 3.6,
+      "predicted": 3.34
+    },
+    {
+      "actual": 10.1,
+      "predicted": 11.05
+    },
+    {
+      "actual": 2.03,
+      "predicted": 3.17
+    },
+    {
+      "actual": 5.72,
+      "predicted": 2.5
+    },
+    {
+      "actual": 1.2,
+      "predicted": 4.3
+    },
+    {
+      "actual": 3.17,
+      "predicted": 2.53
+    },
+    {
+      "actual": 2.72,
+      "predicted": 2.21
+    },
+    {
+      "actual": 28.46,
+      "predicted": 33.44
+    },
+    {
+      "actual": 10.1,
+      "predicted": 10.46
+    },
+    {
+      "actual": 2.62,
+      "predicted": 3.89
+    },
+    {
+      "actual": 3.3,
+      "predicted": 3.66
+    },
+    {
+      "actual": 5.97,
+      "predicted": 7.26
+    },
+    {
+      "actual": 11.0,
+      "predicted": 11.07
+    },
+    {
+      "actual": 6.73,
+      "predicted": 6.82
+    },
+    {
+      "actual": 3.86,
+      "predicted": 4.37
+    },
+    {
+      "actual": 19.48,
+      "predicted": 20.72
+    },
+    {
+      "actual": 27.1,
+      "predicted": 34.14
+    },
+    {
+      "actual": 10.57,
+      "predicted": 6.51
+    },
+    {
+      "actual": 2.21,
+      "predicted": 1.88
+    },
+    {
+      "actual": 2.4,
+      "predicted": 3.35
+    },
+    {
+      "actual": 29.29,
+      "predicted": 24.56
+    },
+    {
+      "actual": 31.28,
+      "predicted": 34.16
+    },
+    {
+      "actual": 2.03,
+      "predicted": 3.31
+    },
+    {
+      "actual": -1.2,
+      "predicted": 0.57
+    },
+    {
+      "actual": 7.78,
+      "predicted": 8.68
+    },
+    {
+      "actual": 14.65,
+      "predicted": 16.29
+    },
+    {
+      "actual": 2.9,
+      "predicted": 3.07
+    },
+    {
+      "actual": 19.07,
+      "predicted": 20.0
+    },
+    {
+      "actual": 9.0,
+      "predicted": 3.24
+    },
+    {
+      "actual": 5.05,
+      "predicted": 4.64
+    },
+    {
+      "actual": 8.15,
+      "predicted": 7.77
+    },
+    {
+      "actual": 0.12,
+      "predicted": 1.14
+    },
+    {
+      "actual": 5.64,
+      "predicted": 4.57
+    },
+    {
+      "actual": 2.7,
+      "predicted": 2.67
+    },
+    {
+      "actual": 3.85,
+      "predicted": 5.44
+    },
+    {
+      "actual": 3.7,
+      "predicted": 3.58
+    },
+    {
+      "actual": 7.39,
+      "predicted": 7.07
+    },
+    {
+      "actual": 6.55,
+      "predicted": 6.05
+    },
+    {
+      "actual": 3.8,
+      "predicted": 3.68
+    },
+    {
+      "actual": 10.25,
+      "predicted": 6.03
+    },
+    {
+      "actual": 2.12,
+      "predicted": 1.82
+    },
+    {
+      "actual": 3.2,
+      "predicted": 4.29
+    },
+    {
+      "actual": 3.3,
+      "predicted": 3.59
+    },
+    {
+      "actual": 1.26,
+      "predicted": 1.76
+    },
+    {
+      "actual": 22.0,
+      "predicted": 19.98
+    },
+    {
+      "actual": 1.5,
+      "predicted": 2.02
+    },
+    {
+      "actual": 10.35,
+      "predicted": 13.14
+    },
+    {
+      "actual": 3.07,
+      "predicted": 3.3
+    },
+    {
+      "actual": 0.74,
+      "predicted": 0.61
+    },
+    {
+      "actual": 2.29,
+      "predicted": 7.12
+    },
+    {
+      "actual": 35.22,
+      "predicted": 33.91
+    },
+    {
+      "actual": 0.87,
+      "predicted": 1.36
+    },
+    {
+      "actual": 7.14,
+      "predicted": 7.01
+    },
+    {
+      "actual": 17.77,
+      "predicted": 21.87
+    },
+    {
+      "actual": 2.7,
+      "predicted": 3.31
+    },
+    {
+      "actual": 31.0,
+      "predicted": 34.41
+    },
+    {
+      "actual": 3.23,
+      "predicted": 6.92
+    },
+    {
+      "actual": 7.7,
+      "predicted": 8.81
+    },
+    {
+      "actual": 23.2,
+      "predicted": 19.47
+    },
+    {
+      "actual": 6.93,
+      "predicted": 6.53
+    },
+    {
+      "actual": 40.24,
+      "predicted": 40.23
+    },
+    {
+      "actual": 6.72,
+      "predicted": 3.14
+    },
+    {
+      "actual": 2.55,
+      "predicted": 1.27
+    },
+    {
+      "actual": 4.42,
+      "predicted": 5.67
+    },
+    {
+      "actual": 9.95,
+      "predicted": 4.31
+    }
+  ]
+}
